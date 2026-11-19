@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alerta Água - Ocorrências</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container topo">
+      <h1>Alerta Água</h1>
+      <nav>
+        <a href="/">Registrar</a>
+        <a href="/ocorrencias" class="ativo">Ocorrências</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <h2>Indicadores</h2>
+    <div class="indicadores">
+      <div class="indicador">
+        <span class="numero" id="indTotal">0</span>
+        <span class="legenda">ocorrências registradas</span>
+      </div>
+      <div class="indicador urgente">
+        <span class="numero" id="indUrgente">0</span>
+        <span class="legenda">urgentes (<span id="indPercentual">0</span>% do total)</span>
+      </div>
+      <div class="indicador">
+        <span class="numero pequeno" id="indBairro">-</span>
+        <span class="legenda" id="indBairroLegenda">bairro com mais ocorrências</span>
+      </div>
+    </div>
+
+    <div class="linha resumos">
+      <section class="card">
+        <h3>Por tipo</h3>
+        <div id="resumoTipo"><p class="vazio">Sem dados ainda.</p></div>
+      </section>
+
+      <section class="card">
+        <h3>Por prioridade</h3>
+        <div id="resumoPrioridade"><p class="vazio">Sem dados ainda.</p></div>
+        <p class="regra">
+          Regra: peso do tipo (alagamento 3, falta de água e esgoto 2, vazamento e bueiro 1)
+          + gravidade (baixa 1, média 2, alta 3) + 1 se atinge moradias.
+          6 ou mais = Urgente, 4-5 = Moderada, até 3 = Baixa.
+        </p>
+      </section>
+    </div>
+
+    <section class="card">
+      <div class="cabecalho-lista">
+        <h3>Ocorrências cadastradas</h3>
+        <div class="filtros">
+          <select id="filtroTipo">
+            <option value="">Todos os tipos</option>
+            <option>Alagamento</option>
+            <option>Falta de água</option>
+            <option>Esgoto a céu aberto</option>
+            <option>Vazamento na rua</option>
+            <option>Bueiro entupido</option>
+          </select>
+          <select id="filtroPrioridade">
+            <option value="">Todas as prioridades</option>
+            <option>Urgente</option>
+            <option>Moderada</option>
+            <option>Baixa</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="mensagemLista" class="mensagem escondido"></div>
+
+      <div class="tabela-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Local</th>
+              <th>Tipo</th>
+              <th>Gravidade</th>
+              <th>Prioridade</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody id="corpoTabela"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Global Solution 2026.2 - Application Development - FIAP</p>
+  </footer>
+
+  <script src="/js/lista.js"></script>
+</body>
+</html>

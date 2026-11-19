@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alerta Água - Registrar ocorrência</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container topo">
+      <h1>Alerta Água</h1>
+      <nav>
+        <a href="/" class="ativo">Registrar</a>
+        <a href="/ocorrencias">Ocorrências</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="intro">
+      <h2>Sobre o projeto</h2>
+      <p>
+        <strong>Problema:</strong> na Região Metropolitana de São Paulo, alagamentos, falta de água,
+        vazamentos e esgoto a céu aberto afetam o dia a dia de muita gente, mas boa parte desses
+        problemas não chega de forma organizada a quem pode resolver.
+      </p>
+      <p>
+        <strong>Público-alvo:</strong> moradores dos bairros afetados, principalmente de regiões
+        periféricas, e também associações de bairro e equipes da prefeitura / defesa civil que precisam
+        saber onde agir primeiro.
+      </p>
+      <p>
+        <strong>Objetivo:</strong> permitir que qualquer morador registre uma ocorrência ligada à água
+        e transformar esses registros em indicadores simples (total, tipos mais comuns, prioridade e
+        bairro mais afetado) para ajudar na tomada de decisão.
+      </p>
+      <p class="ods">
+        <span>ODS 6</span> Água Potável e Saneamento
+        <span>ODS 11</span> Cidades e Comunidades Sustentáveis
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Registrar ocorrência</h2>
+
+      <div id="mensagem" class="mensagem escondido"></div>
+
+      <form id="formOcorrencia" novalidate>
+        <div class="linha">
+          <div class="campo">
+            <label for="cidade">Cidade *</label>
+            <select id="cidade" name="cidade" required>
+              <option value="">Selecione...</option>
+              <option>São Paulo</option>
+              <option>Guarulhos</option>
+              <option>Osasco</option>
+              <option>Santo André</option>
+              <option>São Bernardo do Campo</option>
+              <option>São Caetano do Sul</option>
+              <option>Diadema</option>
+              <option>Mauá</option>
+              <option>Carapicuíba</option>
+              <option>Barueri</option>
+              <option>Taboão da Serra</option>
+              <option>Mogi das Cruzes</option>
+              <option>Itaquaquecetuba</option>
+              <option>Outra (RMSP)</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="bairro">Bairro *</label>
+            <input type="text" id="bairro" name="bairro" placeholder="Ex: Jardim Pantanal" maxlength="60" required>
+          </div>
+        </div>
+
+        <div class="linha">
+          <div class="campo">
+            <label for="tipo">Tipo de ocorrência *</label>
+            <select id="tipo" name="tipo" required>
+              <option value="">Selecione...</option>
+              <option>Alagamento</option>
+              <option>Falta de água</option>
+              <option>Esgoto a céu aberto</option>
+              <option>Vazamento na rua</option>
+              <option>Bueiro entupido</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="gravidade">Gravidade *</label>
+            <select id="gravidade" name="gravidade" required>
+              <option value="">Selecione...</option>
+              <option>Baixa</option>
+              <option>Média</option>
+              <option>Alta</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="data">Data *</label>
+            <input type="date" id="data" name="data" required>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="descricao">Descrição *</label>
+          <textarea id="descricao" name="descricao" rows="4" maxlength="500"
+            placeholder="Conte o que está acontecendo, há quanto tempo, ponto de referência..." required></textarea>
+          <small id="contador">0/500</small>
+        </div>
+
+        <div class="campo check">
+          <input type="checkbox" id="afetaResidencia" name="afetaResidencia">
+          <label for="afetaResidencia">O problema está atingindo casas / moradores diretamente</label>
+        </div>
+
+        <button type="submit" id="btnEnviar">Enviar ocorrência</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Global Solution 2026.2 - Application Development - FIAP</p>
+  </footer>
+
+  <script src="/js/cadastro.js"></script>
+</body>
+</html>
