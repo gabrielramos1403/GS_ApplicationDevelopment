@@ -12,7 +12,7 @@ Desafio: **CitizenTech**
 
 ## Vídeo pitch
 
-Link: _colocar aqui o link do YouTube_
+Link: https://youtu.be/oKWKkrjnXkI
 
 ## O problema
 
