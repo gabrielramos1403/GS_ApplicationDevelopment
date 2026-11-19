@@ -7,7 +7,8 @@ Desafio: **CitizenTech**
 
 | Nome | RM |
 |------|----|
-| Gabriel Ramos Moreira | RM_____ |
+| Gabriel Ramos Moreira | RM564074 |
+| Vinicius Mello Siqueira | RM565257 |
 
 ## Vídeo pitch
 
